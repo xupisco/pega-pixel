@@ -2,6 +2,10 @@ var menuState = {
     create: function() {
         game.add.image(0, 0, 'background');
 
+        this.intro = game.add.audio('intro');
+        this.intro.loop = true;
+        this.intro.play();
+
         if(!localStorage.getItem('bestScore')) {
             localStorage.setItem('bestScore', 0);
         }
@@ -62,6 +66,7 @@ var menuState = {
     },
 
     start: function() {
+        this.intro.stop();
         game.state.start('play');
     }
 }

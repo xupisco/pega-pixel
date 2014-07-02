@@ -22,6 +22,9 @@ var loadState = {
         game.load.audio('jump', ['assets/audio/jump.ogg', 'assets/audio/jump.mp3']);
         game.load.audio('coin', ['assets/audio/coin.ogg', 'assets/audio/coin.mp3']);
         game.load.audio('dead', ['assets/audio/dead.ogg', 'assets/audio/dead.mp3']);
+        game.load.audio('died', 'assets/audio/died.mp3');
+        game.load.audio('music', 'assets/audio/circus.mp3');
+        game.load.audio('intro', 'assets/audio/intro.mp3');
 
         game.load.image('pixel', 'assets/pixel.png');
         game.load.image('pixel_coin', 'assets/pixel_coin.png');

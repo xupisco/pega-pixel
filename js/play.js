@@ -17,6 +17,11 @@ var playState = {
         this.jumpSound = game.add.audio('jump');
         this.coinSound = game.add.audio('coin');
         this.deadSound = game.add.audio('dead');
+        this.diedSound = game.add.audio('died');
+        
+        this.music = game.add.audio('music');
+        this.music.loop = true;
+        this.music.play();
 
         this.emitter = game.add.emitter(0, 0, 15);
         this.emitter.makeParticles('pixel');
@@ -159,13 +164,18 @@ var playState = {
         if(!this.player.alive) {
             return;
         }
+        
+        this.music.stop();
         this.player.kill();
-        if(game.global.sound) this.deadSound.play();
+        if(game.global.sound) {
+            this.deadSound.play();
+        }
         
         this.emitter.x = this.player.x;
         this.emitter.y = this.player.y;
         this.emitter.start(true, 600, null, 15);
         
+        game.time.events.add(500, function() { this.diedSound.play(); }, this);
         game.time.events.add(2000, this.startMenu, this);
     },
 
@@ -203,7 +213,9 @@ var playState = {
     jumpPlayer: function() {
         if (this.player.body.onFloor()) {
             this.player.body.velocity.y = -320;
-            if (game.global.sound) this.jumpSound.play();
+            if (game.global.sound) {
+                this.jumpSound.play();
+            }
             this.emitter.x = this.player.x;
             this.emitter.y = this.player.y;
             this.emitter.start(true, 300, null, 15);
