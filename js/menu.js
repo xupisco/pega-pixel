@@ -47,8 +47,8 @@ var menuState = {
         tween.loop();
         tween.start();
 
-        this.muteButton = game.add.button(20, 20, 'mute', this.toggleSound, this);
-        this.muteButton.input.useHandCursor = true;
+        //this.muteButton = game.add.button(20, 20, 'mute', this.toggleSound, this);
+        //this.muteButton.input.useHandCursor = true;
 
         if(!game.global.sound) {
             this.muteButton.frame = 1;

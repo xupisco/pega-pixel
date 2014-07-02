@@ -175,8 +175,8 @@ var playState = {
         this.emitter.y = this.player.y;
         this.emitter.start(true, 600, null, 15);
         
-        game.time.events.add(500, function() { this.diedSound.play(); }, this);
-        game.time.events.add(2000, this.startMenu, this);
+        game.time.events.add(800, function() { this.diedSound.play(); }, this);
+        game.time.events.add(3000, this.startMenu, this);
     },
 
     startMenu: function() {
