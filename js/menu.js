@@ -4,6 +4,7 @@ var menuState = {
 
         this.intro = game.add.audio('intro');
         this.intro.loop = true;
+        this.intro.volume = .7;
         this.intro.play();
 
         if(!localStorage.getItem('bestScore')) {

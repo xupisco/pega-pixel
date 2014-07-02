@@ -22,6 +22,7 @@ var playState = {
         this.music = game.add.audio('music');
         this.music.loop = true;
         this.music.play();
+        this.music.volume = .5;
 
         this.emitter = game.add.emitter(0, 0, 15);
         this.emitter.makeParticles('pixel');
